@@ -1,0 +1,25 @@
+.country-card {
+  border-radius: 7px;
+  width: 22%;
+  background-color: var(--elements-color);
+  margin-bottom: 75px;
+}
+
+.country-card img {
+  border-radius: 7px 7px 0 0;
+  height: 185px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.country-info {
+  margin: 0px 0px 35px 25px;
+}
+
+.country-info p {
+  font-weight: 800;
+}
+
+.country-info span {
+  font-weight: 600;
+}
