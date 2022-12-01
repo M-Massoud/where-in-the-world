@@ -30,6 +30,7 @@ function Countries() {
           key={country.name.official}
           flag={country.flags.svg}
           name={country.name.common}
+          officialName={country.name.official}
           population={country.population}
           region={country.region}
           capital={country.capital}

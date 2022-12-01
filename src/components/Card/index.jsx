@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import styles from './Card.module.css';
 
 function Card(props) {
@@ -6,7 +8,9 @@ function Card(props) {
   return (
     <>
       <article className={`${styles['country-card']} shadow`}>
-        <img src={props.flag} alt="" />
+        <Link to={`country/${props.officialName}`}>
+          <img src={props.flag} alt="" />
+        </Link>
         <div className={styles['country-info']}>
           <h2 className="country-name">{props.name}</h2>
           <p>

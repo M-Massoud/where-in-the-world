@@ -1,0 +1,49 @@
+.country-info-wrapper {
+  display: flex;
+  gap: 100px;
+  margin: 50px 0;
+}
+
+.img-wrapper {
+  flex-basis: 40%;
+}
+
+.img-wrapper img {
+  background-color: blue;
+  width: 100%;
+}
+
+.country-info {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 60%;
+}
+
+.country-info-column {
+  margin-right: 75px;
+}
+
+.country-info h1 {
+  width: 100%;
+}
+
+.country-info p {
+  font-weight: 800;
+}
+
+.country-info span {
+  font-weight: 300;
+}
+
+.border-countries {
+  width: 100%;
+}
+
+.border-countries span {
+  width: 100%;
+  background-color: var(--elements-color);
+  padding: 5px 30px;
+  margin: 5px;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(128, 128, 128, 0.15);
+}

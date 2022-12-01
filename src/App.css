@@ -15,6 +15,7 @@
 
 body {
   font-family: 'Nunito Sans', sans-serif;
+  background-color: var(--background-color);
 }
 
 .wrapper {
@@ -23,4 +24,22 @@ body {
 
 .shadow {
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.05);
+}
+
+.back-button {
+  background-color: var(--elements-color);
+  padding: 5px 25px;
+  margin-top: 50px;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  gap: 10px;
+  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.02), -8px -8px 8px rgba(0, 0, 0, 0.02);
+}
+
+.back-button:focus {
+  color: black;
 }

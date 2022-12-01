@@ -1,0 +1,17 @@
+.country-info-wrapper {
+  display: flex;
+  gap: 75px;
+}
+
+.country-info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.country-info h1 {
+  width: 100%;
+}
+
+.border-countries {
+  width: 100%;
+}
