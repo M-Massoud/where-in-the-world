@@ -1,0 +1,18 @@
+.search-form {
+  width: 25%;
+  background-color: var(--elements-color);
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+
+.search-form input {
+  border: none;
+  width: 90%;
+  margin-left: 15px;
+}
+
+.search-form input:focus {
+  width: 90%;
+  background-color: transparent;
+  outline: none;
+}

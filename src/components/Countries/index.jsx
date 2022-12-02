@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react';
 import Card from '../Card';
+import Search from '../Search';
+import Filter from '../Filter';
 import styles from './Countries.module.css';
 
 function Countries() {
-  const [countriesData, setCountriesData] = useState([]);
+  const [allCountries, setAllCountries] = useState([]);
+  const [matchedCountries, setMatchedCountries] = useState([]);
 
   useEffect(() => {
     const fetchCountriesData = async () => {
@@ -12,8 +15,9 @@ function Countries() {
 
       const data = await response.json();
       console.log(data);
-      setCountriesData(data);
-      console.log('countries data', countriesData);
+      setAllCountries(data);
+      setMatchedCountries(data);
+      console.log('countries data', allCountries);
     };
 
     try {
@@ -24,19 +28,34 @@ function Countries() {
   }, []);
 
   return (
-    <main className={styles['countries-section']}>
-      {countriesData.map(country => (
-        <Card
-          key={country.name.official}
-          flag={country.flags.svg}
-          name={country.name.common}
-          officialName={country.name.official}
-          population={country.population}
-          region={country.region}
-          capital={country.capital}
+    <>
+      <div className={styles['filter-search-wrapper']}>
+        <Search
+          matchedCountries={matchedCountries}
+          allCountries={allCountries}
+          setMatchedCountries={setMatchedCountries}
         />
-      ))}
-    </main>
+
+        <Filter
+          allCountries={allCountries}
+          setMatchedCountries={setMatchedCountries}
+        />
+      </div>
+
+      <main className={styles['countries-section']}>
+        {matchedCountries.map(country => (
+          <Card
+            key={country.name.official}
+            flag={country.flags.svg}
+            name={country.name.common}
+            officialName={country.name.official}
+            population={country.population}
+            region={country.region}
+            capital={country.capital}
+          />
+        ))}
+      </main>
+    </>
   );
 }
 

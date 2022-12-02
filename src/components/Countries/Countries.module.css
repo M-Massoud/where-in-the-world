@@ -1,8 +1,15 @@
 .countries-section {
   padding: 50px;
   display: flex;
-  gap: 1%;
+  gap: 4%;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   background-color: var(--background-color);
+}
+
+.filter-search-wrapper {
+  padding: 50px 50px 10px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
