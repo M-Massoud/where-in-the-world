@@ -66,7 +66,7 @@ function Country(props) {
             <div className={styles['border-countries']}>
               <p>
                 Border Countries:
-                {props.borderCountries.map(country => {
+                {props.borderCountries?.map(country => {
                   return <span key={country}>{country}</span>;
                 })}
               </p>

@@ -1,0 +1,14 @@
+.filter-form select {
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  background-color: var(--elements-color);
+  border-right: 10px solid transparent;
+}
+
+.filter-form option {
+  margin: 50px;
+  line-height: 5;
+  background-color: var(--elements-color);
+  border-radius: 5px;
+}
