@@ -52,3 +52,9 @@
     width: 30%;
   }
 }
+
+@media screen and (min-width: 1440px) {
+  .country-card img {
+    height: 250px;
+  }
+}
