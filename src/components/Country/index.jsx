@@ -6,16 +6,23 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 function Country(props) {
   console.log('country propppppps', props);
 
-  const formatedPopulation = props.population.toLocaleString('en-us');
+  const formatedPopulation = props.population?.toLocaleString('en-us');
 
-  const countryCurrency = Object.keys(props.currencies)[0];
+  const countryCurrency = props.currencies && Object.keys(props.currencies)[0];
 
-  const countryLanguages = Object.values(props.languages);
+  const countryLanguages = props.languages && Object.values(props.languages);
+
   console.log(props.languages);
   console.log(countryLanguages);
-  const countryNativeLanguage = Object.keys(props.languages).at(-1);
-  const countryNativeName =
-    props.countryNames.nativeName[countryNativeLanguage].common;
+
+  const countryNativeLanguage =
+    props.languages && Object?.keys(props.languages).at(-1);
+
+  let countryNativeName = props.name;
+  if (countryNativeLanguage) {
+    countryNativeName =
+      props.countryNames.nativeName[countryNativeLanguage].common;
+  }
 
   return (
     <>
@@ -28,7 +35,7 @@ function Country(props) {
             <img src={props.flag} alt="" />
           </div>
           <section className={styles['country-info']}>
-            <h1>{props.name}</h1>
+            <h2>{props.name}</h2>
             <div className={styles['country-info-column']}>
               <p>
                 Native Name: <span>{countryNativeName}</span>
@@ -56,7 +63,7 @@ function Country(props) {
               </p>
               <p>
                 Languages:
-                {countryLanguages.map((language, index) => {
+                {countryLanguages?.map((language, index) => {
                   return (
                     <span key={language}> {(index ? ',' : '') + language}</span>
                   );

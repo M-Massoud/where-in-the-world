@@ -2,6 +2,7 @@
   display: flex;
   gap: 100px;
   margin: 50px 0;
+  color: var(--text-color);
 }
 
 .img-wrapper {
@@ -9,7 +10,6 @@
 }
 
 .img-wrapper img {
-  background-color: blue;
   width: 100%;
 }
 
@@ -23,7 +23,7 @@
   margin-right: 75px;
 }
 
-.country-info h1 {
+.country-info h2 {
   width: 100%;
 }
 
@@ -40,10 +40,17 @@
 }
 
 .border-countries span {
-  width: 100%;
   background-color: var(--elements-color);
   padding: 5px 30px;
   margin: 5px;
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.02);
   border: 1px solid rgba(128, 128, 128, 0.15);
+  display: inline-block;
+}
+
+@media screen and (max-width: 920px) {
+  .country-info-wrapper {
+    flex-direction: column;
+    gap: 50px;
+  }
 }

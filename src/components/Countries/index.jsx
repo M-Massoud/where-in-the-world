@@ -3,10 +3,12 @@ import Card from '../Card';
 import Search from '../Search';
 import Filter from '../Filter';
 import styles from './Countries.module.css';
+import Spinner from '../Spinner';
 
 function Countries() {
   const [allCountries, setAllCountries] = useState([]);
   const [matchedCountries, setMatchedCountries] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchCountriesData = async () => {
@@ -17,6 +19,7 @@ function Countries() {
       console.log(data);
       setAllCountries(data);
       setMatchedCountries(data);
+      setIsLoading(false);
       console.log('countries data', allCountries);
     };
 
@@ -42,19 +45,23 @@ function Countries() {
         />
       </div>
 
-      <main className={styles['countries-section']}>
-        {matchedCountries.map(country => (
-          <Card
-            key={country.name.official}
-            flag={country.flags.svg}
-            name={country.name.common}
-            officialName={country.name.official}
-            population={country.population}
-            region={country.region}
-            capital={country.capital}
-          />
-        ))}
-      </main>
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <main className={styles['countries-section']}>
+          {matchedCountries.map(country => (
+            <Card
+              key={country.name.official}
+              flag={country.flags.svg}
+              name={country.name.common}
+              officialName={country.name.official}
+              population={country.population}
+              region={country.region}
+              capital={country.capital}
+            />
+          ))}
+        </main>
+      )}
     </>
   );
 }

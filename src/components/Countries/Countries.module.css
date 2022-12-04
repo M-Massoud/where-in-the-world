@@ -13,3 +13,10 @@
   justify-content: space-between;
   align-items: center;
 }
+
+@media screen and (max-width: 768px) {
+  .filter-search-wrapper {
+    flex-direction: column;
+    gap: 25px;
+  }
+}

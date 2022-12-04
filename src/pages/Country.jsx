@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Country from '../components/Country';
+import Spinner from '../components/Spinner';
 
 function CountryPage() {
   const { id } = useParams();
@@ -32,7 +33,7 @@ function CountryPage() {
   console.log('after the use effffffeeecccttttt', countryData);
 
   return isLoading ? (
-    '...loading!'
+    <Spinner />
   ) : (
     <Country
       name={countryData.name.common}

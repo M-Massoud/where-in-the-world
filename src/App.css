@@ -7,7 +7,7 @@
   --dark-gray: hsl(0, 0%, 52%);
 }
 
-:root[data-theme='dark'] {
+[data-theme='dark'] {
   --background-color: hsl(207, 26%, 17%);
   --text-color: white;
   --elements-color: hsl(209, 23%, 22%);
@@ -28,6 +28,7 @@ body {
 
 .back-button {
   background-color: var(--elements-color);
+  color: var(--text-color);
   padding: 5px 25px;
   margin-top: 50px;
   text-decoration: none;
@@ -36,9 +37,15 @@ body {
   align-items: center;
   width: fit-content;
   gap: 10px;
-  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.02), -8px -8px 8px rgba(0, 0, 0, 0.02);
+  transition-duration: 0.33s;
 }
 
-.back-button:focus {
-  color: black;
+.back-button:hover {
+  transform: translateY(-3px);
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    padding: 0px 25px 0px 25px;
+  }
 }

@@ -1,5 +1,6 @@
 .search-form {
-  width: 25%;
+  width: 35%;
+  display: flex;
   background-color: var(--elements-color);
   border-radius: 5px;
   padding: 10px 20px;
@@ -9,10 +10,25 @@
   border: none;
   width: 90%;
   margin-left: 15px;
+  background-color: transparent;
+  color: var(--text-color);
 }
 
 .search-form input:focus {
   width: 90%;
   background-color: transparent;
   outline: none;
+}
+
+@media screen and (max-width: 768px) {
+  .search-form {
+    width: 95%;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .search-form {
+    width: 50%;
+  }
 }

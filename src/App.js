@@ -5,6 +5,7 @@ import './App.css';
 import Header from './components/Header';
 import Countries from './components/Countries';
 import CountryPage from './pages/Country';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Countries />} />
         <Route path="/country/:id" element={<CountryPage />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );
