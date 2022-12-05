@@ -4,16 +4,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 function Country(props) {
-  console.log('country propppppps', props);
+  // console.log('country props', props);
 
   const formatedPopulation = props.population?.toLocaleString('en-us');
 
   const countryCurrency = props.currencies && Object.keys(props.currencies)[0];
 
   const countryLanguages = props.languages && Object.values(props.languages);
-
-  console.log(props.languages);
-  console.log(countryLanguages);
 
   const countryNativeLanguage =
     props.languages && Object?.keys(props.languages).at(-1);

@@ -2,7 +2,6 @@ import styles from './Filter.module.css';
 function Filter({ allCountries, setMatchedCountries }) {
   const handleChange = event => {
     const selectedRegion = event.target.value;
-    console.log(selectedRegion);
     if (selectedRegion === 'All') return setMatchedCountries(allCountries);
 
     const matchedCountriesArray = allCountries.filter(country => {
