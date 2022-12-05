@@ -5,14 +5,12 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 function Search({ allCountries, setMatchedCountries, matchedCountries }) {
   const handleFormChange = event => {
     const searchText = event.target.value.toLowerCase();
-    console.log(event.target.value);
     if (!searchText) return setMatchedCountries(allCountries);
 
     const matchedCountriesArray = allCountries.filter(country => {
       return country.name.common.toLowerCase().includes(searchText);
     });
-    console.log('mathced counteries', matchedCountries);
-    console.log(matchedCountries);
+    // console.log('mathced counteries', matchedCountries);
     return setMatchedCountries(matchedCountriesArray);
   };
 

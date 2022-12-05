@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon } from '@fortawesome/free-regular-svg-icons';
 
 const rootEl = document.documentElement;
-console.log(rootEl);
 
 function Header() {
   // check if there's a selected theme in the local storage

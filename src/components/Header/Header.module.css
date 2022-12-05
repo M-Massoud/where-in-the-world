@@ -26,6 +26,9 @@
 
 @media screen and (max-width: 768px) {
   .main-header h1 {
-    font-size: 21px;
+    font-size: 20px;
+  }
+  .theme-switcher-wrapper {
+    width: 150px;
   }
 }

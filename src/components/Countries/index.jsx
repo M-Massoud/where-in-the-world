@@ -13,14 +13,12 @@ function Countries() {
   useEffect(() => {
     const fetchCountriesData = async () => {
       const response = await fetch('https://restcountries.com/v3.1/all');
-      console.log(response);
 
       const data = await response.json();
-      console.log(data);
       setAllCountries(data);
       setMatchedCountries(data);
       setIsLoading(false);
-      console.log('countries data', allCountries);
+      // console.log('countries data', allCountries);
     };
 
     try {

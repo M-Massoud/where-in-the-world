@@ -6,7 +6,6 @@ import Spinner from '../components/Spinner';
 function CountryPage() {
   const { id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
-  console.log(id);
 
   const [countryData, setCountryData] = useState({});
 
@@ -15,10 +14,9 @@ function CountryPage() {
       const response = await fetch(
         `https://restcountries.com/v3.1/name/${id}?fullText=true`
       );
-      console.log(response);
 
       const data = await response.json();
-      console.log(data);
+      // console.log(data);
       setCountryData(data[0]);
       setIsLoading(false);
     };
@@ -29,8 +27,6 @@ function CountryPage() {
       console.log('error', error);
     }
   }, [id]);
-
-  console.log('after the use effffffeeecccttttt', countryData);
 
   return isLoading ? (
     <Spinner />
