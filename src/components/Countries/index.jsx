@@ -12,20 +12,20 @@ function Countries() {
 
   useEffect(() => {
     const fetchCountriesData = async () => {
-      const response = await fetch('https://restcountries.com/v3.1/all');
-
-      const data = await response.json();
-      setAllCountries(data);
-      setMatchedCountries(data);
-      setIsLoading(false);
-      // console.log('countries data', allCountries);
+      try {
+        const response = await fetch('https://restcountries.com/v3.1/all');
+        const data = await response.json();
+        setAllCountries(data);
+        setMatchedCountries(data);
+        setIsLoading(false);
+        // console.log('countries data', allCountries);
+        // throw new Error('Something Went Wrong!');
+      } catch (error) {
+        console.log('Error', error);
+      }
     };
 
-    try {
-      fetchCountriesData();
-    } catch (error) {
-      console.log('error', error);
-    }
+    fetchCountriesData();
   }, []);
 
   return (

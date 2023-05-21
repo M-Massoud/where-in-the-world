@@ -18,7 +18,7 @@ function Country(props) {
   let countryNativeName = props.name;
   if (countryNativeLanguage) {
     countryNativeName =
-      props.countryNames.nativeName[countryNativeLanguage].common;
+      props.countryNames.nativeName[countryNativeLanguage]?.common;
   }
 
   return (
