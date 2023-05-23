@@ -23,12 +23,11 @@
 @media screen and (max-width: 768px) {
   .search-form {
     width: 95%;
-    margin-right: auto;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
   .search-form {
-    width: 50%;
+    width: auto;
   }
 }

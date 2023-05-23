@@ -1,6 +1,7 @@
 import styles from './Header.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon } from '@fortawesome/free-regular-svg-icons';
+import { Link } from 'react-router-dom';
 
 const rootEl = document.documentElement;
 
@@ -22,7 +23,9 @@ function Header() {
   return (
     <>
       <header className={`${styles['main-header']} shadow wrapper`}>
-        <h1>Where in the world?</h1>
+        <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to="/">
+          <h1>Where in the world?</h1>
+        </Link>
         <button
           onClick={handleSwitchTheme}
           className={`${styles['theme-switcher-wrapper']}`}

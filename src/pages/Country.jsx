@@ -11,21 +11,22 @@ function CountryPage() {
 
   useEffect(() => {
     const fetchCountryData = async () => {
-      const response = await fetch(
-        `https://restcountries.com/v3.1/name/${id}?fullText=true`
-      );
+      try {
+        const response = await fetch(
+          `https://restcountries.com/v3.1/name/${id}?fullText=true`
+        );
 
-      const data = await response.json();
-      // console.log(data);
-      setCountryData(data[0]);
-      setIsLoading(false);
+        const data = await response.json();
+        // console.log(data);
+        setCountryData(data[0]);
+        setIsLoading(false);
+        // throw new Error('Something went wrong!');
+      } catch (error) {
+        console.log('error', error);
+      }
     };
 
-    try {
-      fetchCountryData();
-    } catch (error) {
-      console.log('error', error);
-    }
+    fetchCountryData();
   }, [id]);
 
   return isLoading ? (

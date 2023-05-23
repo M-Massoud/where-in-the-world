@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Countries from './components/Countries';
 import CountryPage from './pages/Country';
 import NotFound from './pages/NotFound';
+import ErrorBoundary from './components/ErrorBoundary';
 
 function App() {
   return (
@@ -13,7 +14,14 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Countries />} />
-        <Route path="/country/:id" element={<CountryPage />} />
+        <Route
+          path="/country/:id"
+          element={
+            <ErrorBoundary>
+              <CountryPage />
+            </ErrorBoundary>
+          }
+        />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
