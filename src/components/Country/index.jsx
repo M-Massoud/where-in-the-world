@@ -1,4 +1,5 @@
 import styles from './Country.module.css';
+import cardStyles from '../Card/Card.module.css';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
@@ -6,7 +7,7 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 function Country(props) {
   // console.log('country props', props);
 
-  const formatedPopulation = props.population?.toLocaleString('en-us');
+  const formattedPopulation = props.population?.toLocaleString('en-us');
 
   const countryCurrency = props.currencies && Object.keys(props.currencies)[0];
 
@@ -17,8 +18,7 @@ function Country(props) {
 
   let countryNativeName = props.name;
   if (countryNativeLanguage) {
-    countryNativeName =
-      props.countryNames.nativeName[countryNativeLanguage]?.common;
+    countryNativeName = props.countryNames.nativeName[countryNativeLanguage]?.common;
   }
 
   return (
@@ -38,7 +38,7 @@ function Country(props) {
                 Native Name: <span>{countryNativeName}</span>
               </p>
               <p>
-                Population: <span>{formatedPopulation}</span>
+                Population: <span>{formattedPopulation}</span>
               </p>
               <p>
                 Region: <span>{props.region}</span>
@@ -70,8 +70,16 @@ function Country(props) {
             <div className={styles['border-countries']}>
               <p>
                 Border Countries:
-                {props.borderCountries?.map(country => {
-                  return <span key={country}>{country}</span>;
+                {props.borderCountries?.map((country, index) => {
+                  return (
+                    <Link
+                      key={country.name?.official || index}
+                      to={`/country/${country.name.official}`}
+                      className={cardStyles['country-name-link']}
+                    >
+                      <span>{country.name?.common || ''}</span>
+                    </Link>
+                  );
                 })}
               </p>
             </div>

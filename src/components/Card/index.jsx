@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styles from './Card.module.css';
 
 function Card(props) {
-  const formatedPopulation = props.population.toLocaleString('en-us');
+  const formattedPopulation = props.population.toLocaleString('en-us');
 
   return (
     <>
@@ -20,7 +20,7 @@ function Card(props) {
           </Link>
 
           <p>
-            Population: <span>{formatedPopulation}</span>
+            Population: <span>{formattedPopulation}</span>
           </p>
           <p>
             Region: <span>{props.region}</span>
